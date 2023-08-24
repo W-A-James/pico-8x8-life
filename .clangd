@@ -1,0 +1,2 @@
+CompileFlags:
+  Remove: [--target=*, -resource-dir=*, --, --driver-mode=*]
