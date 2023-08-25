@@ -1,11 +1,14 @@
-#include "life.h"
-#include "display.h"
 #include "hardware/adc.h"
 #include "hardware/gpio.h"
 
+#include "display.h"
+#include "lfsr.h"
+#include "life.h"
+
 void life_init() {
+  lfsr_init(adc_read());
   for (int i = 0; i < BOARD_SIZE; i++) {
-    board_0[i] = ((int8_t)(adc_read()) % 2) == 0;
+    board_0[i] = lfsr_fib_step() == 0;
     board_1[i] = 0;
   }
 

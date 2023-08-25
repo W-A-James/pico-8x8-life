@@ -12,6 +12,7 @@ add_executable(
   main.c
   display.c
   life.c
+  lfsr.c
 )
 
 add_executable(
@@ -19,6 +20,7 @@ add_executable(
   test.c
   display.c
   life.c
+  lfsr.c
 )
 
 target_link_libraries(
