@@ -27,9 +27,11 @@ int main() {
 
   // Initialize life sim
   struct life life = life_new();
+  life_init(&life);
 
   // reset after DEAD_BOARD_THRESH steps without any board changes
   int steps_without_change = 0;
+
   while (1) {
     life_display(&life, 200);
     life_step(&life);
