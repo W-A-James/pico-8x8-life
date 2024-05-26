@@ -1,16 +1,12 @@
 #include "hardware/gpio.h"
-#include "hardware/adc.h"
 #include "pico/stdlib.h"
 
-#include "display.h"
-#include "life.h"
+#include "../src/display.h"
+#include "../src/life.h"
 
 int main() {
   // set up display
   display_init();
-
-  adc_init();
-  adc_select_input(2);
   // Initialize life sim
   life_init();
   life_reset();

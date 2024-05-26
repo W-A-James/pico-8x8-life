@@ -3,16 +3,17 @@
 #include "hardware/gpio.h"
 #include <stdint.h>
 
+// Included for testing
 #define SET_XY(x, y)                                                           \
   do {                                                                         \
     current_board[(y << 3) + x] = 1;                                           \
   } while (0)
 
+// Included for testing
 #define CLEAR_XY(x, y)                                                         \
   do {                                                                         \
     current_board[(y << 3) + x] = 0;                                           \
   } while (0)
-
 
 #define BOARD_SIZE 64
 #define WIDTH 8

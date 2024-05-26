@@ -1,6 +1,4 @@
-#include "hardware/adc.h"
 #include "hardware/gpio.h"
-#include "hardware/uart.h"
 #include "pico/stdlib.h"
 
 #include "display.h"
@@ -14,10 +12,6 @@ uint8_t full[8] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
 int main() {
   // set up display
   display_init();
-
-  // set up adc
-  adc_init();
-  adc_select_input(2);
 
   // Initialize life sim
   life_init();
