@@ -47,7 +47,6 @@ void display_set_row(const uint row_num, uint8_t row_bitmask) {
       gpio_put(pin, 0);
     }
     row_bitmask <<= 1u;
-    // TODO: Set row led mask properly
   }
   gpio_put(ROW_PINS[row_num], 1);
 }
