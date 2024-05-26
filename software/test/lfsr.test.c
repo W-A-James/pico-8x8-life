@@ -12,13 +12,13 @@ int main() {
 
   while (1) {
     printf("Reseeding lfsr");
-    lfsr_init(0xabcd);
+    struct lfsr lfsr = lfsr_init(0xabcd);
 
     int ones = 0;
     int zeros = 0;
 
     for (int i = 0; i < 1000; i++) {
-      if (lfsr_fib_step())
+      if (lfsr_fib_step(&lfsr))
         ones++;
       else
         zeros++;

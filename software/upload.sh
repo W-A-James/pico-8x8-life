@@ -1,14 +1,16 @@
-#!/bin/bash
-usage='Usage:
-  ./upload.sh test        build and upload the test binary to the pico using pictool 
+#!/bin/env bash
+usage='
+Description
+  Builds and uploads binaries to the pi-pico board using picotool
+
+Usage
   ./upload.sh lfsr.test        build and upload the test binary to the pico using pictool 
-  ./upload.sh adc_rand.test        build and upload the test binary to the pico using pictool 
+  ./upload.sh life.test        build and upload the test binary to the pico using pictool 
   ./upload.sh pico-life   build and upload the pico-life binary to the pico using pictool'
 case "$1" in
   "pico-life") ;&
   "lfsr.test") ;&
-  "adc_rand.test") ;&
-  "test")
+  "life.test")
         cd build
         make
         exitCode=$?
@@ -32,4 +34,5 @@ case "$1" in
         ;;
     *)
       echo "$usage"
+      exit 1
 esac

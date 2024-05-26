@@ -42,7 +42,7 @@ void display_set_row(const uint row_num, uint8_t row_bitmask) {
 
   for (int i = 0; i < 8; i++) {
     int pin = COL_PINS[i];
-    if ((row_bitmask & 0b10000000u) != 0) {
+    if ((row_bitmask & 0x80u) != 0) {
       gpio_set_dir(pin, GPIO_OUT);
       gpio_put(pin, 0);
     }

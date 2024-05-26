@@ -6,6 +6,7 @@ pico_sdk_init()
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+add_compile_options(-Wall -Wextra -Wpedantic)
 
 ################### Main binary ###################
 add_executable(
