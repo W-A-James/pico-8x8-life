@@ -7,7 +7,7 @@
 #include "life.h"
 
 struct life life_new(void) {
-  struct life life = {.lfsr = lfsr_init((uint16_t)rand())};
+  struct life life;
   life_reset(&life);
 
   return life;
@@ -15,7 +15,7 @@ struct life life_new(void) {
 
 void life_init(struct life *life) {
   for (int i = 0; i < BOARD_SIZE; i++) {
-    life->board_0[i] = lfsr_fib_step(&life->lfsr);
+    life->board_0[i] = rand() % 2;
     life->board_1[i] = 0;
   }
 

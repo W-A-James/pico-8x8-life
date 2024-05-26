@@ -25,7 +25,6 @@ struct life {
   int8_t board_0[BOARD_SIZE];
   int8_t board_1[BOARD_SIZE];
   int8_t *current_board;
-  struct lfsr lfsr;
 };
 
 // Creates a new instance of the life struct

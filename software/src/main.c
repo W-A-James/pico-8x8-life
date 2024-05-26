@@ -1,5 +1,6 @@
 #include "hardware/gpio.h"
 #include "pico/stdlib.h"
+#include <stdlib.h>
 
 #include "display.h"
 #include "life.h"
@@ -25,10 +26,13 @@ int main() {
   // set up display
   display_init();
 
-  // Initialize life sim
   struct life life = life_new();
-  life_init(&life);
 
+  // Seed prng before initializing life board
+  srand(time_us_32());
+
+  // Initialize life sim
+  life_init(&life);
   // reset after DEAD_BOARD_THRESH steps without any board changes
   int steps_without_change = 0;
 

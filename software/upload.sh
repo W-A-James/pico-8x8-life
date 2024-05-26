@@ -4,12 +4,10 @@ Description
   Builds and uploads binaries to the pi-pico board using picotool
 
 Usage
-  ./upload.sh lfsr.test        build and upload the test binary to the pico using pictool 
   ./upload.sh life.test        build and upload the test binary to the pico using pictool 
   ./upload.sh pico-life   build and upload the pico-life binary to the pico using pictool'
 case "$1" in
   "pico-life") ;&
-  "lfsr.test") ;&
   "life.test")
         cd build
         make

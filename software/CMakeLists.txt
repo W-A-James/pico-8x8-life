@@ -14,7 +14,6 @@ add_executable(
   src/main.c
   src/display.c
   src/life.c
-  src/lfsr.c
 )
 
 target_link_libraries(
@@ -28,30 +27,12 @@ pico_enable_stdio_uart(${PROJECT_NAME} 1)
 pico_add_extra_outputs(${PROJECT_NAME})
 ###################################################
 
-################# LFSR test #######################
-add_executable(
-  lfsr.test
-  test/lfsr.test.c
-  src/lfsr.c
-)
-
-target_link_libraries(
-  lfsr.test
-  pico_stdlib
-  pico_bootsel_via_double_reset
-)
-pico_enable_stdio_usb(lfsr.test 1)
-pico_enable_stdio_uart(lfsr.test 1)
-pico_add_extra_outputs(lfsr.test 1)
-###################################################
-
 ############## Game of life test ##################
 add_executable(
   life.test
   test/life.test.c
   src/life.c
   src/display.c
-  src/lfsr.c
 )
 target_link_libraries(
   life.test
