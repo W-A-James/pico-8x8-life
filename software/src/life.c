@@ -3,7 +3,6 @@
 #include <stdlib.h> // For rand()
 
 #include "display.h"
-#include "lfsr.h"
 #include "life.h"
 
 struct life life_new(void) {

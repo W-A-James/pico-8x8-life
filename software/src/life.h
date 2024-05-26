@@ -2,7 +2,6 @@
 #define INCL_LIFE
 
 #include "hardware/gpio.h"
-#include "lfsr.h"
 #include <stdint.h>
 
 // Included for testing
